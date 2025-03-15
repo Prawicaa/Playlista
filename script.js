@@ -16,21 +16,29 @@ let playlist = [];
 function searchSongs() {
     const input = document.getElementById('songInput').value.toLowerCase();
     const suggestionsList = document.getElementById('suggestionsList');
-    suggestionsList.innerHTML = ''; // Czyścimy poprzednie sugestie
-
-    if (input.length > 0) {
+    
+    // Czyścimy poprzednie sugestie
+    suggestionsList.innerHTML = ''; 
+    
+    // Jeśli użytkownik wpisał co najmniej 3 znaki
+    if (input.length > 2) {
         const filteredSongs = songs.filter(song => song.toLowerCase().includes(input));
-        suggestionsList.style.display = 'block'; // Pokazujemy listę sugestii
         
-        // Wyświetlamy sugestie
-        filteredSongs.forEach(song => {
-            const li = document.createElement('li');
-            li.textContent = song;
-            li.onclick = () => addSongToPlaylist(song);
-            suggestionsList.appendChild(li);
-        });
+        // Wyświetlamy sugestie, jeśli są jakieś wyniki
+        if (filteredSongs.length > 0) {
+            suggestionsList.style.display = 'block'; // Pokazujemy listę sugestii
+            
+            filteredSongs.forEach(song => {
+                const li = document.createElement('li');
+                li.textContent = song;
+                li.onclick = () => addSongToPlaylist(song);
+                suggestionsList.appendChild(li);
+            });
+        } else {
+            suggestionsList.style.display = 'none'; // Jeśli brak wyników, ukrywamy listę
+        }
     } else {
-        suggestionsList.style.display = 'none'; // Ukrywamy listę, jeśli pole jest puste
+        suggestionsList.style.display = 'none'; // Ukrywamy listę jeśli mniej niż 3 znaki
     }
 }
 

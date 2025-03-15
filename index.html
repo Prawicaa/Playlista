@@ -1,78 +1,25 @@
-body {
-    font-family: Arial, sans-serif;
-    background-image: url('https://github.com/Prawicaa/Playlista/blob/main/pulpit/background.jpg.jpg?raw=true');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-    color: white;
-}
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlista Weselna</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dodaj Piosenki do Playlisty</h1>
+        
+        <div class="search-container">
+            <input type="text" id="songInput" placeholder="Wpisz nazwę piosenki..." oninput="searchSongs()">
+            <ul id="suggestionsList" class="suggestions-list"></ul>
+        </div>
 
-.container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-}
+        <ul id="playlist" class="playlist">
+            <!-- Lista piosenek zostanie dodana tutaj -->
+        </ul>
+    </div>
 
-h1 {
-    margin-bottom: 20px;
-}
-
-.search-container {
-    position: relative;
-    margin-bottom: 20px;
-}
-
-#songInput {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.suggestions-list {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
-    position: absolute;
-    width: 100%;
-    z-index: 1;
-    display: none;
-}
-
-.suggestions-list li {
-    padding: 10px;
-    cursor: pointer;
-}
-
-.suggestions-list li:hover {
-    background-color: #444;
-}
-
-.playlist {
-    list-style-type: none;
-    padding: 0;
-}
-
-.playlist li {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-}
-
-.playlist li .remove-btn {
-    background-color: red;
-    color: white;
-    border: none;
-    padding: 5px;
-    cursor: pointer;
-    margin-left: 10px;
-    border-radius: 3px;
-}
-
-.playlist li .remove-btn:hover {
-    background-color: darkred;
-}
+    <script src="script.js"></script>
+</body>
+</html>

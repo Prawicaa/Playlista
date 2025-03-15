@@ -1,74 +1,78 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url(https://github.com/Prawicaa/Playlista/blob/main/pulpit/background.jpg.jpg?raw=true);
+    background-image: url('https://github.com/Prawicaa/Playlista/blob/main/pulpit/background.jpg.jpg?raw=true');
     background-size: cover;
-    color: white;
+    background-position: center;
     text-align: center;
+    color: white;
 }
 
 .container {
-    max-width: 800px;
+    width: 80%;
     margin: 0 auto;
     padding: 20px;
 }
 
-header {
-    padding: 20px 0;
-}
-
 h1 {
-    font-size: 2em;
-    margin-top: 10px;
+    margin-bottom: 20px;
 }
 
-.logo {
-    width: 100px;
+.search-container {
+    position: relative;
+    margin-bottom: 20px;
 }
 
-input[type="text"] {
+#songInput {
+    width: 100%;
     padding: 10px;
-    width: 70%;
-    margin-top: 20px;
-    font-size: 1em;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
-button {
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #1db954;
-    color: white;
-    border: none;
-    cursor: pointer;
+.suggestions-list {
+    list-style-type: none;
+    padding: 0;
     margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    display: none;
 }
 
-button:hover {
-    background-color: #1ed760;
+.suggestions-list li {
+    padding: 10px;
+    cursor: pointer;
 }
 
-#song-list {
-    margin-top: 30px;
+.suggestions-list li:hover {
+    background-color: #444;
 }
 
-ul {
+.playlist {
     list-style-type: none;
     padding: 0;
 }
 
-li {
-    background-color: rgba(0, 0, 0, 0.5);
-    margin: 5px 0;
+.playlist li {
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 10px;
+    margin: 5px 0;
     border-radius: 5px;
 }
 
-a {
-    color: #1db954;
-    text-decoration: none;
+.playlist li .remove-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 3px;
 }
 
-a:hover {
-    text-decoration: underline;
+.playlist li .remove-btn:hover {
+    background-color: darkred;
 }

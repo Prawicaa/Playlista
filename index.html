@@ -1,31 +1,78 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding Playlist</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <img src="https://github.com/Prawicaa/Playlista/blob/main/pulpit/spotifylogo.png.jpg?raw=true" alt="Spotify Logo" class="logo">
-            <h1>Wedding Playlist Generator</h1>
-        </header>
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://github.com/Prawicaa/Playlista/blob/main/pulpit/background.jpg.jpg?raw=true');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+}
 
-        <div class="content">
-            <input type="text" id="song-title" placeholder="Wpisz tytuł piosenki" />
-            <button onclick="addSong()">Dodaj Piosenkę</button>
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-            <div id="song-list">
-                <h2>Twoja Lista Piosenek:</h2>
-                <ul id="songs">
-                    <!-- Lista piosenek będzie się pojawiać tutaj -->
-                </ul>
-            </div>
-        </div>
-    </div>
+h1 {
+    margin-bottom: 20px;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+.search-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#songInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.suggestions-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    display: none;
+}
+
+.suggestions-list li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestions-list li:hover {
+    background-color: #444;
+}
+
+.playlist {
+    list-style-type: none;
+    padding: 0;
+}
+
+.playlist li {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.playlist li .remove-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 3px;
+}
+
+.playlist li .remove-btn:hover {
+    background-color: darkred;
+}
